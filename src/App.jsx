@@ -8,7 +8,7 @@ import Resume from './pages/Resume'
 function App() {
 
   return (
-    <div>
+    <div className='bg-black min-h-screen'>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
