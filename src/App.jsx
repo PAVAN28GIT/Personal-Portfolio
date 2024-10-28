@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -8,7 +7,7 @@ import Resume from './pages/Resume'
 function App() {
 
   return (
-    <div className='bg-black min-h-screen'>
+    <div className="w-full bg-cover h-screen bg-right" style={{ backgroundImage: `url('/images/col.jpg')` }}>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

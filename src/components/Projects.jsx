@@ -1,11 +1,11 @@
 import React from 'react'
-import Skill from './Skill'
+
 
 const Projects = () => {
   return (
-    <div className='bg-zinc-900 h-screen'>
+    <div className='bg-zinc-900 min-h-screen' id='projects'>
       
-      <Skill />
+      all projects show here
       </div>
   )
 }

@@ -1,14 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import About from '../components/About'
+import Hero from '../components/Hero'
 import Projects from '../components/Projects'
+import Skill from '../components/Skill'
 import Contact from './Contact'
+
 
 const Home = () => {
   return (
-    <div >
-          <About />
+    <div id='home' >
+          <Hero />
+          <Skill />
           <Projects />
           <Contact />
     </div>

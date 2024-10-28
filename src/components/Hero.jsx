@@ -2,10 +2,10 @@ import React from "react";
 import { TypeAnimation } from 'react-type-animation';
 import headerImg from '../../public/icons/header-img.svg';
 
-const About = () => {
+const Hero = () => {
   return (
-    <div className="w-full bg-cover h-screen bg-right " style={{ backgroundImage: `url('/images/col.jpg')` }} >
-        <div className="pl-24  mt-16 w-full justify-between items-center flex flex-row gap-4 h-4/5">
+    <div className="h-screen" id="hero" >
+        <div className="pl-24 pt-32 w-full justify-between items-center flex flex-row gap-4 h-4/5">
           <div>
             <span className="border-2 text-xl text-white px-5 py-2 bg-gradient-to-r from-purple-900 to-blue-900">
               Welcome to my Portfolio
@@ -30,13 +30,16 @@ const About = () => {
               repeat={Infinity}
             />
           </div>
-          <div className="slow-bounce ">
-            <img className="w-2/3 ml-28 " src={headerImg} alt="header-image" />
+          <div className="slow-appear-logo">
+            <div className="slow-bounce ">
+              <img className="w-2/3 ml-28 pt-48" src={headerImg} alt="header-image" />
+            </div>
           </div>
+          
         </div>
     </div>
   );
 };
 
-export default About;
+export default Hero;
 
