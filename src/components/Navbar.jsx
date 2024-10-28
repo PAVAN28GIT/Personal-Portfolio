@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav
       className={`w-full flex flex-row justify-between px-14 fixed top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black py-4" : "bg-transparent pt-10"
+        scrolled ? "bg-black py-4" : "bg-transparent pt-8"
       } text-white`}
     >
       <h1 className="text-4xl font-medium">Pk</h1>
