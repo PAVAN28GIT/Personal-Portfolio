@@ -1,35 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { Link as ScrollLink } from "react-scroll"; // smooth scroll to section
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-
-import { FaGithub, FaLinkedin, FaBloggerB } from "react-icons/fa";
+import React, { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { FaHamburger, FaGithub, FaLinkedin, FaBloggerB } from "react-icons/fa";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const threshold = 20; // 20vh threshold
-      setScrolled(scrollY > threshold);
-    };
+  // Navigation tabs data
+  const navTabs = [
+    { name: "Home", link: "/" },
+    { name: "Skills", link: "#skills" },
+    { name: "Projects", link: "#projects" },
+    { name: "Resume", link: "/resume" },
+  ];
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Handle drawer toggle
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
 
   return (
     <nav
-      className={`w-full flex flex-row justify-between px-14 fixed top-0 z-50 transition-all duration-30
-        ${ scrolled ? "bg-black py-4" : "bg-transparent pt-8" } text-white`}
+      className={`w-full flex flex-row justify-between items-center px-8 lg:px-14 fixed top-0 z-50 border-b border-[rgba(255,255,255,0.4)] transition-all duration-300
+        shadow-2xl shadow-gray-800 py-4 backdrop-blur-2xl text-white`}
     >
-      <NavLink to="/" className="text-4xl font-medium cursor-pointer"  >Pk</NavLink>
-   
+      {/* Logo */}
+      <NavLink to="/" className="cursor-pointer text-4xl font-semibold">
+        Pk
+      </NavLink>
 
-      <ul className=" hidden lg:flex flex-row ml-24 gap-10 items-center p-2 text-xl">
-        {/* Home Link */}
+      {/* Desktop Nav Links */}
+      <ul className="hidden lg:flex flex-row ml-24 gap-10 items-center p-2 text-xl">
         {location.pathname === "/" ? (
           <ScrollLink
             to="hero"
@@ -51,7 +54,6 @@ const Navbar = () => {
           </button>
         )}
 
-        {/* Conditionally render links based on route */}
         {location.pathname === "/" && (
           <>
             <ScrollLink
@@ -79,16 +81,20 @@ const Navbar = () => {
           </>
         )}
 
-        {/* Resume Link */}
         <NavLink
           to="/resume"
-          className={({ isActive }) => (isActive ? 'text-white border-b-4 px-2 border-pink-600' : 'text-gray-300')}
+          className={({ isActive }) =>
+            isActive
+              ? "text-white border-b-4 px-2 border-pink-600"
+              : "text-gray-300"
+          }
         >
           Resume
         </NavLink>
       </ul>
 
-      <div className="flex flex-row gap-4">
+      {/* Social Media Icons */}
+      <div className="hidden md:flex flex-row gap-4">
         <div className="flex flex-row gap-5 p-2 items-center">
           <a href="https://github.com/PAVAN28GIT">
             <FaGithub size={30} />
@@ -102,35 +108,66 @@ const Navbar = () => {
         </div>
 
         {location.pathname === "/" && (
-          <>
-            <ScrollLink
+          <ScrollLink
             to="contact"
             smooth={true}
             offset={-70}
             duration={500}
             spy={true}
             className="inline-block relative overflow-hidden"
-            >
-
+          >
             <button
-            className="relative border-2 py-3 px-5 text-lg transition-colors 
-            before:absolute before:-left-5 before:top-0 before:-z-10 before:h-full before:w-56 before:rounded-full
-            before:origin-top-left before:scale-x-0 before:bg-white before:transition-transform before:duration-700 
-            hover:text-black before:hover:scale-x-100"
+              className="relative border-2 py-3 px-5 text-lg transition-colors 
+              before:absolute before:-left-5 before:top-0 before:-z-10 before:h-full before:w-56 before:rounded-full
+              before:origin-top-left before:scale-x-0 before:bg-white before:transition-transform before:duration-700 
+              hover:text-black before:hover:scale-x-100"
             >
-            Send a Message
-            </button> 
-
-
-
-            </ScrollLink>
-    
-         
-   
-          </>
+              Send a Message
+            </button>
+          </ScrollLink>
         )}
+      </div>
 
-        
+      {/* Mobile Hamburger Drawer */}
+      <div className="md:hidden w-fit">
+        <button onClick={toggleDrawer} className="text-gray-500">
+          <FaHamburger size={30} />
+        </button>
+          <div className="fixed inset-0 z-40 bg-black bg-opacity-70 bottom-[60rem]">
+            <div
+              className={`fixed top-0 left-0 right-0 bg-black text-gray-400 p-4 transition-transform duration-500 ease-in-out ${
+                drawerOpen ? "translate-y-0" : "-translate-y-full"
+              }`}
+            >
+              <button
+                onClick={toggleDrawer}
+                className="absolute top-4 right-4"
+              >
+                X
+              </button>
+              <ul className="text-lg mt-8 space-y-4">
+                {navTabs.map((tab) => (
+                  <li key={tab.name} onClick={toggleDrawer}>
+                    {tab.link.startsWith("#") && location.pathname === "/" ? (
+                      <ScrollLink
+                        to={tab.link.substring(1)}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        className="cursor-pointer"
+                      >
+                        {tab.name}
+                      </ScrollLink>
+                    ) : (
+                      <Link to={tab.link} className="">
+                        {tab.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
       </div>
     </nav>
   );

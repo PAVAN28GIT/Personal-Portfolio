@@ -37,7 +37,7 @@ const Contact = () => {
 
   return (
   
-    <div className='bg-gradient-to-r from-pink-600 to-purple-500 h-[82vh] pt-16' id='contact'>
+    <div className='hidden bg-gradient-to-r from-pink-600 to-purple-500 h-[82vh] pt-16' id='contact'>
     <div className='w-full px-10 py-5 flex flex-row justify-between items-center gap-2'>
 
       <div className='ml-5 slow-appear'>

@@ -3,22 +3,23 @@ import { projects } from "../utils/constants"; // Assuming projects is imported 
 
 const Projects = () => {
   return (
-    <div className="bg-black py-20" id="projects">
-      <h2 className="text-5xl font-semibold mb-4 text-white font-Montserrat text-center ">
-        <div className="flex flex-row justify-between">
-          <div className="w-[500px] h-[3px] bg-gradient-to-r from-purple-800 to-pink-700 item-center "></div>
-          <div className="w-[500px] h-[3px] bg-gradient-to-r from-purple-800 to-pink-700 items-end "></div>
+    <div className="bg-black" id="projects">
+      <h2 className="text-5xl w-full font-semibold mb-4 text-white font-Montserrat text-center ">
+        <div className="flex flex-row items-center space-x-6 px-6 lg:px-20 justify-between">
+          <div className="text-4xl md:text-5xl lg:text-7xl font-bold text-nowrap items-start">
+            Personal Projects
+          </div>
+          <div className="w-full h-[3px] bg-gradient-to-r from-purple-800 to-pink-700 items-end "></div>
         </div>
-        Personal Projects
       </h2>
 
-      <div className="slow-appear flex overflow-x-auto space-x-20 px-20 py-5 pt-16">
+      <div className="slow-appear flex overflow-x-auto space-x-10 px-5 lg:px-20 py-5 md:py-10 ">
         {projects.map((project) => (
-          <div className="flex flex-col gap-2">
-            <h1 className="text-2xl font-bold text-white font-sans text-wrap">
+          <div className="flex h-[36rem] flex-col p-4 rounded-xl space-y-6 border border-[rgba(255,255,255,0.5)] shadow-2xl shadow-[rgba(255,255,255,0.5)]">
+            <h1 className="text-4xl font-bold text-white font-sans text-wrap">
               {project.name}
             </h1>
-            <div className="h-64 w-96 relative overflow-hidden rounded-lg">
+            <div className="h-60 w-80 lg:w-[24rem] relative overflow-hidden rounded-lg">
               {" "}
               {/* Container for the image */}
               <img

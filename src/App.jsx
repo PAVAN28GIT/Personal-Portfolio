@@ -8,7 +8,7 @@ import { Toaster } from 'react-hot-toast'
 function App() {
 
   return (
-    <div className="w-full bg-cover h-screen bg-right" style={{ backgroundImage: `url('/images/col.jpg')` }}>
+    <div className='bg-black'>
         <Toaster />
         <Navbar />
         <Routes>
