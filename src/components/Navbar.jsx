@@ -22,13 +22,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full flex flex-row justify-between px-14 fixed top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black py-4" : "bg-transparent pt-8"
-      } text-white`}
+      className={`w-full flex flex-row justify-between px-14 fixed top-0 z-50 transition-all duration-30
+        ${ scrolled ? "bg-black py-4" : "bg-transparent pt-8" } text-white`}
     >
-      <h1 className="text-4xl font-medium">Pk</h1>
+      <NavLink to="/" className="text-4xl font-medium cursor-pointer"  >Pk</NavLink>
+   
 
-      <ul className="flex flex-row ml-24 gap-10 items-center p-2 text-xl">
+      <ul className=" hidden lg:flex flex-row ml-24 gap-10 items-center p-2 text-xl">
         {/* Home Link */}
         {location.pathname === "/" ? (
           <ScrollLink
@@ -38,14 +38,14 @@ const Navbar = () => {
             duration={500}
             spy={true}
             activeClass="!text-white border-b-4 px-3 border-pink-600"
-            className="text-gray-300"
+            className="text-gray-300 cursor-pointer"
           >
             Home
           </ScrollLink>
         ) : (
           <button
             onClick={() => navigate("/")}
-            className="text-gray-300"
+            className="text-gray-300 cursor-pointer"
           >
             Home
           </button>
@@ -61,7 +61,7 @@ const Navbar = () => {
               duration={500}
               spy={true}
               activeClass="!text-white border-b-4 px-3 border-pink-600"
-              className="text-gray-300"
+              className="text-gray-300 cursor-pointer"
             >
               Skills
             </ScrollLink>
@@ -72,7 +72,7 @@ const Navbar = () => {
               duration={500}
               spy={true}
               activeClass="!text-white border-b-4 px-3 border-pink-600"
-              className="text-gray-300"
+              className="text-gray-300 cursor-pointer"
             >
               Projects
             </ScrollLink>

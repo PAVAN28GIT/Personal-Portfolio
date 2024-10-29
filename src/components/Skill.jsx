@@ -16,7 +16,7 @@ const Skill = () => {
         {skills.map((skill) => (
           <li className=" slow-appear flex flex-col items-center p-4 border-2 border-purple-400 rounded-lg shadow transform transition-transform duration-300 hover:scale-125">
             <div className=" text-3xl mb-2">{<skill.icon />}</div>{" "}
-            <span className="font-medium text-center">{skill.name}</span>
+            <span className="font-medium text-center text-nowrap">{skill.name}</span>
           </li>
         ))}
       </ul>
