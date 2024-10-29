@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaHamburger, FaGithub, FaLinkedin, FaBloggerB } from "react-icons/fa";
 
 const Navbar = () => {
