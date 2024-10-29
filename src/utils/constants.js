@@ -38,7 +38,7 @@ export const projects = [
     name: "VPC based Cloud Hosting Setup",
     description : "This project designs an AWS Virtual Private Cloud (VPC) to tackle three key challenges: security, availability, and traffic management. The goal is to create a secure and scalable infrastructure where we can host servers safely and securely for modern businesses.",
     Github: "",
-    LiveDemo: "https://pavan-blog.hashnode.dev/aws-vpc-design1",
+    Blog: "https://pavan-blog.hashnode.dev/aws-vpc-design1",
     img : "/project-images/aws-vpc.avif"
   },
   {

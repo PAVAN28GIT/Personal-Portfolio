@@ -51,6 +51,16 @@ const Projects = () => {
                   Live demo
                 </a>
               )}
+
+              {project.Blog && (
+                <a
+                  href={project.Blog}
+                  target="_blank"
+                  className="bg-gradient-to-r from-purple-800 to-pink-700 px-10 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
+                >
+                  Read Blog
+                </a>
+              )}
             </div>
           </div>
         ))}
