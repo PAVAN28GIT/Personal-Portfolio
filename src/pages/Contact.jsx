@@ -11,6 +11,11 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    if(!form.current.from_name.value || !form.current.from_email.value || !form.current.message.value){
+      showToast('Please fill in all fields', 'error');
+      return;
+    }
+
     emailjs
       .sendForm('service_3eyu6pf', 'template_37cju2v', form.current, {
         publicKey: 'nGJOUXXcdWLABqoME',

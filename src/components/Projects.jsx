@@ -36,6 +36,7 @@ const Projects = () => {
               {project.Github && (
                 <a
                   href={project.Github}
+                  target="_blank"
                   className="bg-gradient-to-r from-purple-800 to-pink-700 px-10 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
                 >
                   Github
@@ -44,6 +45,7 @@ const Projects = () => {
               {project.LiveDemo && (
                 <a
                   href={project.LiveDemo}
+                  target="_blank"
                   className="bg-gradient-to-r from-blue-700 to-purple-700 px-10 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
                 >
                   Live demo
