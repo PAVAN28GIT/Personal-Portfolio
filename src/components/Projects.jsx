@@ -13,8 +13,8 @@ const Projects = () => {
         </div>
       </h2>
 
-      <div className="slow-appear flex overflow-x-auto space-x-10 px-5 lg:px-20 py-5 md:py-10 ">
-        {projects.map((project) => (
+      <div className="flex overflow-x-auto space-x-10 px-5 py-2 lg:px-20 md:py-10 ">
+        {projects.map((project , index) => (
           <div className="flex h-[36rem] flex-col p-4 rounded-xl space-y-6 border border-[rgba(255,255,255,0.5)] shadow-2xl shadow-[rgba(255,255,255,0.5)]">
             <h1 className="text-4xl font-bold text-white font-sans text-wrap">
               {project.name}

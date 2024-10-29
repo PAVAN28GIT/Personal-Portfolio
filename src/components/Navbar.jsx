@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: "Home", link: "/" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
-    { name: "Resume", link: "/resume" },
+    { name: "Resume", link: "https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view?usp=sharing" },
   ];
 
   // Handle drawer toggle
@@ -81,16 +81,11 @@ const Navbar = () => {
           </>
         )}
 
-        <NavLink
-          to="/resume"
-          className={({ isActive }) =>
-            isActive
-              ? "text-white border-b-4 px-2 border-pink-600"
-              : "text-gray-300"
-          }
-        >
-          Resume
-        </NavLink>
+
+        <a 
+        className=" text-gray-300 hover:text-white cursor-pointer"
+        target="_blank"
+        href="https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view"> Resume </a>
       </ul>
 
       {/* Social Media Icons */}
@@ -159,9 +154,9 @@ const Navbar = () => {
                         {tab.name}
                       </ScrollLink>
                     ) : (
-                      <Link to={tab.link} className="">
+                      <a href={tab.link} target="_blank" className="">
                         {tab.name}
-                      </Link>
+                      </a>
                     )}
                   </li>
                 ))}
