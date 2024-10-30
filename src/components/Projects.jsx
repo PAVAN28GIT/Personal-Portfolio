@@ -15,8 +15,8 @@ const Projects = () => {
 
       <div className="flex overflow-x-auto space-x-10 px-5 py-2 lg:px-20 md:py-10 ">
         {projects.map((project , index) => (
-          <div className="flex h-[36rem] flex-col p-4 rounded-xl space-y-6 border border-[rgba(255,255,255,0.5)] shadow-2xl shadow-[rgba(255,255,255,0.5)]">
-            <h1 className="text-4xl font-bold text-white font-sans text-wrap">
+          <div className="flex h-[30rem] md:h-[33rem] flex-col p-4 rounded-xl space-y-3 border border-[rgba(255,255,255,0.5)] shadow-2xl shadow-[rgba(255,255,255,0.5)]">
+            <h1 className="text-4xl font-bold text-white font-sans text-nowrap">
               {project.name}
             </h1>
             <div className="h-60 w-80 lg:w-[24rem] relative overflow-hidden rounded-lg">
@@ -25,11 +25,11 @@ const Projects = () => {
               <img
                 src={project.img}
                 alt="projectImage"
-                className="absolute top-0 left-0 h-full w-full object-cover object-center"
+                className="absolute top-0 left-0 h-full w-full object-cover object-top"
               />
             </div>
 
-            <p className="text-white font-light text-left py-2">
+            <p className="text-white h-[10rem] font-light text-left py-2">
               {project.description}
             </p>
 
@@ -38,16 +38,16 @@ const Projects = () => {
                 <a
                   href={project.Github}
                   target="_blank"
-                  className="bg-gradient-to-r from-purple-800 to-pink-700 px-10 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
+                  className="bg-gradient-to-r from-purple-800 to-pink-700 px-4 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
                 >
-                  Github
+                  Source Code
                 </a>
               )}
               {project.LiveDemo && (
                 <a
                   href={project.LiveDemo}
                   target="_blank"
-                  className="bg-gradient-to-r from-blue-700 to-purple-700 px-10 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
+                  className="bg-gradient-to-r from-blue-700 to-purple-700 px-4 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
                 >
                   Live demo
                 </a>
@@ -57,7 +57,7 @@ const Projects = () => {
                 <a
                   href={project.Blog}
                   target="_blank"
-                  className="bg-gradient-to-r from-purple-800 to-pink-700 px-10 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
+                  className=" bg-gradient-to-r from-purple-800 to-pink-700 px-4 text-white py-3 rounded-md hover:bg-gradient-to-r hover:from-pink-300 hover:to-purple-400 hover:text-black"
                 >
                   Read Blog
                 </a>
