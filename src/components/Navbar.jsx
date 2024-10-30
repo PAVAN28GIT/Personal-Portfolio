@@ -10,10 +10,13 @@ const Navbar = () => {
 
   // Navigation tabs data
   const navTabs = [
-    { name: "Home", link: "/" },
+    { name: "Home", link: "#hero" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
-    { name: "Resume", link: "https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view?usp=sharing" },
+    {
+      name: "Resume",
+      link: "https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view?usp=sharing",
+    },
   ];
 
   // Handle drawer toggle
@@ -81,11 +84,14 @@ const Navbar = () => {
           </>
         )}
 
-
-        <a 
-        className=" text-gray-300 hover:text-white cursor-pointer"
-        target="_blank"
-        href="https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view"> Resume </a>
+        <a
+          className=" text-gray-300 hover:text-white cursor-pointer"
+          target="_blank"
+          href="https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view"
+        >
+          {" "}
+          Resume{" "}
+        </a>
       </ul>
 
       {/* Social Media Icons */}
@@ -125,44 +131,53 @@ const Navbar = () => {
 
       {/* Mobile Hamburger Drawer */}
       <div className="md:hidden w-fit">
-        <button onClick={toggleDrawer} className="text-gray-500">
+        <button onClick={toggleDrawer} className="text-gray-500 hover:text-white">
           <FaHamburger size={30} />
         </button>
-          <div className="fixed inset-0 z-40 bg-black bg-opacity-70 bottom-[60rem]">
-            <div
-              className={`fixed top-0 left-0 right-0 bg-black text-gray-400 p-4 transition-transform duration-500 ease-in-out ${
-                drawerOpen ? "translate-y-0" : "-translate-y-full"
-              }`}
-            >
-              <button
-                onClick={toggleDrawer}
-                className="absolute top-4 right-4"
-              >
-                X
-              </button>
-              <ul className="text-lg mt-8 space-y-4">
-                {navTabs.map((tab) => (
-                  <li key={tab.name} onClick={toggleDrawer}>
-                    {tab.link.startsWith("#") && location.pathname === "/" ? (
-                      <ScrollLink
-                        to={tab.link.substring(1)}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                        className="cursor-pointer"
-                      >
-                        {tab.name}
-                      </ScrollLink>
-                    ) : (
-                      <a href={tab.link} target="_blank" className="">
-                        {tab.name}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="fixed inset-0 z-40 bg-black bg-opacity-70 bottom-[60rem]">
+          <div
+            className={`fixed top-0 left-0 right-0 bg-black text-gray-400 p-4 transition-transform duration-500 ease-in-out ${
+              drawerOpen ? "translate-y-0" : "-translate-y-full"
+            }`}
+          >
+            <button onClick={toggleDrawer} className="absolute top-4 right-4 hover:text-white">
+              X
+            </button>
+            <ul className="text-lg mt-8 space-y-4">
+              {navTabs.map((tab) => (
+                <li key={tab.name} onClick={toggleDrawer}>
+                  {tab.link.startsWith("#") && location.pathname === "/" ? (
+                    <ScrollLink
+                      to={tab.link.substring(1)}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                      className="cursor-pointer hover:!text-white"
+                      activeClass="!text-white"
+                    >
+                      {tab.name}
+                    </ScrollLink>
+                  ) : (
+                    <a href={tab.link} target="_blank" className="">
+                      {tab.name}
+                    </a>
+                  )}
+                </li>
+              ))}
+              <div className="flex flex-row gap-5 p-2 items-center hover:text-white">
+                <a href="https://github.com/PAVAN28GIT">
+                  <FaGithub size={30} />
+                </a>
+                <a href="https://www.linkedin.com/in/pavan-kumar-k-/">
+                  <FaLinkedin size={30} />
+                </a>
+                <a href="https://pavan-blog.hashnode.dev/">
+                  <FaBloggerB size={30} />
+                </a>
+              </div>
+            </ul>
           </div>
+        </div>
       </div>
     </nav>
   );
