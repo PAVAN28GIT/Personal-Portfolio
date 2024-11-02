@@ -8,6 +8,8 @@ const Navbar = () => {
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const resume_link = "https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view?usp=sharing"
+
   // Navigation tabs data
   const navTabs = [
     { name: "Home", link: "#hero" },
@@ -15,7 +17,7 @@ const Navbar = () => {
     { name: "Projects", link: "#projects" },
     {
       name: "Resume",
-      link: "https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view?usp=sharing",
+      link: resume_link,
     },
   ];
 
@@ -87,7 +89,7 @@ const Navbar = () => {
         <a
           className=" text-gray-300 hover:text-white cursor-pointer"
           target="_blank"
-          href="https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view"
+          href={resume_link}
         >
           {" "}
           Resume{" "}
