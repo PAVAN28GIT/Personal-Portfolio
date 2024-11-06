@@ -8,7 +8,7 @@ const Navbar = () => {
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const resume_link = "https://drive.google.com/file/d/1qsgJjMkWxsQWpyP7ZWBMwOiSCms_BTvm/view?usp=sharing"
+  const resume_link = "https://drive.google.com/file/d/1urNdV3Qf6UB-wqTMIm6IDdmcEKT3c74z/view?usp=sharing"
 
   // Navigation tabs data
   const navTabs = [
