@@ -15,12 +15,14 @@ const Projects = () => {
 
       <div className="flex overflow-x-auto space-x-10 px-5 py-2 lg:px-20 md:py-10 ">
         {projects.map((project , index) => (
-          <div className="flex h-[30rem] md:h-[33rem] flex-col p-4 rounded-xl space-y-3 border border-[rgba(255,255,255,0.5)] shadow-2xl shadow-[rgba(255,255,255,0.5)]">
-            <h1 className="text-4xl font-bold text-white font-sans text-nowrap">
+          <div className="group">
+          <div className="flex h-[30rem] md:h-[33rem] flex-col p-4 rounded-xl space-y-3 border border-[rgba(255,255,255,0.5)] shadow-2xl shadow-[rgba(255,255,255,0.5)] group-hover:scale-95 transition hover:ease duration-500
+          hover:shadow-purple-400 ">
+            <h1 className="text-4xl font-bold text-white font-sans text-nowrap ">
               {project.name}
             </h1>
             <div className="h-60 w-80 lg:w-[24rem] relative overflow-hidden rounded-lg">
-              {" "}
+
               {/* Container for the image */}
               <img
                 src={project.img}
@@ -63,6 +65,7 @@ const Projects = () => {
                 </a>
               )}
             </div>
+          </div>
           </div>
         ))}
       </div>

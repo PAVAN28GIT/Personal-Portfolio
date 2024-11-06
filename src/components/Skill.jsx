@@ -15,8 +15,9 @@ const Skill = () => {
 
       <ul className="flex flex-wrap text-white px-4 lg:px-40 py-5 lg:py-10 justify-center items-center">
         {skills.map((skill) => (
-          <li className="w-24 lg:h-40 lg:w-40 flex flex-col m-1 lg:m-2 items-center justify-center p-4 border-2 border-purple-400 rounded-lg">
-            <div className=" text-3xl lg:text-6xl mb-2">{<skill.icon />}</div>{" "}
+          
+          <li className="w-24 lg:h-40 lg:w-40 flex flex-col m-1 lg:m-2 items-center justify-center p-4 border-purple-400 rounded-lg border-2 hover:scale-95 hover:border-purple-600 transition hover:ease-in-out duration-200">
+            <div className=" text-3xl lg:text-6xl mb-2 ">{<skill.icon />}</div>{" "}
             <span className="font-medium text-center text-nowrap">{skill.name}</span>
           </li>
         ))}
