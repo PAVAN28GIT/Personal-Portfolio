@@ -21,7 +21,7 @@ export const skills = [
 
 export const projects = [
   {
-    name: "Real-time Chess Game",
+    name: "Chess Game",
     description: "A Real-time Multiplayer chess game built using the Socket.IO & MERN stack (MongoDB, Express, React, Node.js) combined with Chess.js.",
     Github: "https://github.com/PAVAN28GIT/Chess-Game.git",
     LiveDemo: "https://chess-game-pk.vercel.app/",
