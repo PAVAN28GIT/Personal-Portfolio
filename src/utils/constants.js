@@ -21,18 +21,18 @@ export const skills = [
 
 export const projects = [
   {
+    name: "Real-time Chess Game",
+    description: "A Real-time Multiplayer chess game built using the Socket.IO & MERN stack (MongoDB, Express, React, Node.js) combined with Chess.js.",
+    Github: "https://github.com/PAVAN28GIT/Chess-Game.git",
+    LiveDemo: "https://chess-game-pk.vercel.app/",
+    img : "/project-images/chessgame.png"
+  },
+  {
     name: "Personal Portfolio",
     description: "I built this portfolio from the ground up using React JS and Tailwind CSS, with simple keyframe animations to enhance the user experience.",
     Github: "https://github.com/PAVAN28GIT/Personal-Portfolio.git",
     LiveDemo: "https://pavankumark.vercel.app",
     img : "/project-images/portfolio.png"
-  },
-  {
-    name: "WeatherWiz",
-    description: "WeatherWiz is a modern weather app that delivers real-time updates and forecasts built using Vite, React, and Tailwind CSS. It pulls data from the OpenWeatherMap API to deliver accurate weather information and forecasts for locations around the world.",
-    Github: "https://github.com/PAVAN28GIT/WeatherWiz.git",
-    LiveDemo: "https://weather-wiz-git-main-pavan28gits-projects.vercel.app/",
-    img : "/project-images/weatherwiz.png"
   },
   {
     name: "Featured Stories",
@@ -47,6 +47,13 @@ export const projects = [
     Github: "",
     Blog: "https://pavan-blog.hashnode.dev/aws-vpc-design1",
     img : "/project-images/aws-vpc.avif"
+  },
+  {
+    name: "WeatherWiz",
+    description: "WeatherWiz is a modern weather app that delivers real-time updates and forecasts built using Vite, React, and Tailwind CSS. It pulls data from the OpenWeatherMap API to deliver accurate weather information and forecasts for locations around the world.",
+    Github: "https://github.com/PAVAN28GIT/WeatherWiz.git",
+    LiveDemo: "https://weather-wiz-git-main-pavan28gits-projects.vercel.app/",
+    img : "/project-images/weatherwiz.png"
   },
   {
     name: " AST Rule Engine ",
